@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Comment(models.Model):
-    videoId = models.TextField(max_length=20)
+    videoId = models.TextField(max_length=20, default=None)
     content = models.TextField(max_length=50)
     likes = models.IntegerField()
     dislikes = models.IntegerField()
