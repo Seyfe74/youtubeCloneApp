@@ -38,7 +38,7 @@ class ReplyList(APIView):
         serializerReply = ReplySerializer(reply, many=True)
         return Response(serializerReply.data)
 
-    def post(self, request, comment):
+    def post(self, request, comment_id):
         # make sure this is tied to a comment!
         serializerReply = ReplySerializer(data=request.data)
         if serializerReply.is_valid():
