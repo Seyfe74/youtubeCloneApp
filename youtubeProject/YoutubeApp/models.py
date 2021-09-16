@@ -14,6 +14,3 @@ class Comment(models.Model):
 class Reply(models.Model):
     replies = models.TextField(max_length=100)
     comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-   
-
-
