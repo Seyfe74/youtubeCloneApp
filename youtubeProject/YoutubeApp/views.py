@@ -32,9 +32,9 @@ class CommentDetail(APIView):
 
 
 class ReplyList(APIView):
-    def get(self, request):
+    def get(self, request,comment):
         #TODO: Change this so it only gets replies for a specific comment
-        reply = Reply.objects.all()
+        reply = Reply.objects.filter(comment = comment)
         serializerReply = ReplySerializer(reply, many=True)
         return Response(serializerReply.data)
 
